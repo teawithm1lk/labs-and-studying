@@ -12,6 +12,8 @@ int getNumberOfShittyLines(int** array, int sizeOfSquareMatrix);
 
 void openPart2();
 
+void failInput();
+
 int main()
 {
 	openPart1();
@@ -85,6 +87,7 @@ void openPart2()
 	freopen("input.txt", "r", stdin);
 	int numberRowsAndLines;
 	std::cin >> numberRowsAndLines;
+	failInput();
 	int** dynamicArray = new int* [numberRowsAndLines];
 	for (int i = 0; i < numberRowsAndLines; i++)
 	{
@@ -95,16 +98,21 @@ void openPart2()
 		for (int j = 0; j < numberRowsAndLines; j++)
 		{
 			std::cin >> dynamicArray[i][j];
-			if (std::cin.fail())
-			{
-				fclose(stdin);
-				freopen("output.txt", "w", stdout);
-				std::cout << "Failed. Try again with other input values.";
-				exit(0);
-			}
+			failInput();
 		}
 	}
 	fclose(stdin);
 	freopen("output.txt", "w", stdout);
 	std::cout << getNumberOfShittyLines(dynamicArray, numberRowsAndLines);
+}
+
+void failInput()
+{
+	if (std::cin.fail())
+	{
+		fclose(stdin);
+		freopen("output.txt", "w", stdout);
+		std::cout << "Failed. Try again with other input values.";
+		exit(0);
+	}
 }
