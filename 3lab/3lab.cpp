@@ -36,6 +36,13 @@ int main()
 		int lengthOfArray;
 		while (std::cin >> lengthOfArray)
 		{
+			if (std::cin.fail() or lengthOfArray <= 0)
+			{	
+				fclose(stdin);
+				std::cout << lengthOfArray;
+				std::cerr << "Ошибка. Неверно введенный размер массива. Завершение программы.";
+				exit(0);
+			}
 			int* massiveInFile = new int[lengthOfArray];
 			std::cout << "\nМассив:\n";
 			for (int i = 0; i < lengthOfArray; i++)
