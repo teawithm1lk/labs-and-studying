@@ -49,9 +49,9 @@ void callPartC()
 	freopen("inputC.txt", "r", stdin);
 	int sizeOfLine;
 	std::cin >> sizeOfLine;
-	if (std::cin.fail())
+	if (std::cin.fail() or sizeOfLine <= 0)
 	{
-		std::cerr << "Îøèáêà ââîäà ðàçìåðà ìàññèâà.";
+		std::cerr << "ÃŽÃ¸Ã¨Ã¡ÃªÃ  Ã¢Ã¢Ã®Ã¤Ã  Ã°Ã Ã§Ã¬Ã¥Ã°Ã  Ã¬Ã Ã±Ã±Ã¨Ã¢Ã .";
 		exit(0);
 	}
 	sizeOfLine++;
@@ -66,11 +66,11 @@ void callPartC()
 	fclose(stdin);
 	if (functionC(inputArray, sizeOfLine))
 	{
-		std::cout << "Â äàííîé ñòðîêå åñòü òàêàÿ ïàðà ñèìâîëîâ.";
+		std::cout << "Ã‚ Ã¤Ã Ã­Ã­Ã®Ã© Ã±Ã²Ã°Ã®ÃªÃ¥ Ã¥Ã±Ã²Ã¼ Ã²Ã ÃªÃ Ã¿ Ã¯Ã Ã°Ã  Ã±Ã¨Ã¬Ã¢Ã®Ã«Ã®Ã¢.";
 	}
 	else
 	{
-		std::cout << "Â äàííîé ñòðîêå íåò òàêîé ïàðû ñèìâîëîâ.";
+		std::cout << "Ã‚ Ã¤Ã Ã­Ã­Ã®Ã© Ã±Ã²Ã°Ã®ÃªÃ¥ Ã­Ã¥Ã² Ã²Ã ÃªÃ®Ã© Ã¯Ã Ã°Ã» Ã±Ã¨Ã¬Ã¢Ã®Ã«Ã®Ã¢.";
 	}
 	delete[]inputArray;
 
@@ -90,10 +90,10 @@ void callPartString()
 	unsigned int lengthOfLine = inputString.length();
 	if (functionString(inputString, lengthOfLine))
 	{
-		std::cout << "Â äàííîé ñòðîêå åñòü òàêàÿ ïàðà ñèìâîëîâ.";
+		std::cout << "Ã‚ Ã¤Ã Ã­Ã­Ã®Ã© Ã±Ã²Ã°Ã®ÃªÃ¥ Ã¥Ã±Ã²Ã¼ Ã²Ã ÃªÃ Ã¿ Ã¯Ã Ã°Ã  Ã±Ã¨Ã¬Ã¢Ã®Ã«Ã®Ã¢.";
 	}
 	else
 	{
-		std::cout << "Â äàííîé ñòðîêå íåò òàêîé ïàðû ñèìâîëîâ.";
+		std::cout << "Ã‚ Ã¤Ã Ã­Ã­Ã®Ã© Ã±Ã²Ã°Ã®ÃªÃ¥ Ã­Ã¥Ã² Ã²Ã ÃªÃ®Ã© Ã¯Ã Ã°Ã» Ã±Ã¨Ã¬Ã¢Ã®Ã«Ã®Ã¢.";
 	}
 }
