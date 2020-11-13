@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 #pragma warning(disable:4996)
 
 int const LINE = 5;
@@ -6,19 +6,21 @@ int const ROW = 5;
 
 int getLinesOfDifferent(int array[][ROW], int line, int row);
 
-void openPart1();
+void callPart1();
 
 int getNumberOfShittyLines(int** array, int sizeOfSquareMatrix);
 
-void openPart2();
+void callPart2();
 
 void failInput();
 
+void failInputByNegativeNumber(int number);
+
 int main()
 {
-	openPart1();
+	callPart1();
 
-	openPart2();
+	callPart2();
 }
 
 int getLinesOfDifferent(int array[][ROW], int line, int row)
@@ -52,7 +54,7 @@ int getLinesOfDifferent(int array[][ROW], int line, int row)
 	return linesOfDifferentElements;
 }
 
-void openPart1()
+void callPart1()
 {
 	int array[LINE][ROW] = { {1, 2, 3, 4, 5},
 						{6, 7, 8, 9, 10},
@@ -82,12 +84,13 @@ int getNumberOfShittyLines(int** array, int sizeOfSquareMatrix)
 	return numberOfUnusualLines;
 }
 
-void openPart2()
+void callPart2()
 {
 	freopen("input.txt", "r", stdin);
 	int numberRowsAndLines;
 	std::cin >> numberRowsAndLines;
 	failInput();
+	failInputByNegativeNumber(numberRowsAndLines);
 	int** dynamicArray = new int* [numberRowsAndLines];
 	for (int i = 0; i < numberRowsAndLines; i++)
 	{
@@ -109,6 +112,17 @@ void openPart2()
 void failInput()
 {
 	if (std::cin.fail())
+	{
+		fclose(stdin);
+		freopen("output.txt", "w", stdout);
+		std::cout << "Failed. Try again with other input values.";
+		exit(0);
+	}
+}
+
+void failInputByNegativeNumber(int number)
+{
+	if (number <= 0)
 	{
 		fclose(stdin);
 		freopen("output.txt", "w", stdout);
