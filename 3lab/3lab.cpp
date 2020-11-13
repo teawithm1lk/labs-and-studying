@@ -1,4 +1,5 @@
-﻿#include <bits/stdc++.h>
+#include <iostream>
+#include <time.h>
 #pragma warning(disable : 4996)
 
 int getNumbersForDynamicArray(int *dynamicArray, int arrayLength);
