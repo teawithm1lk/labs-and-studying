@@ -39,7 +39,6 @@ int main()
 			if (std::cin.fail() or lengthOfArray <= 0)
 			{	
 				fclose(stdin);
-				std::cout << lengthOfArray;
 				std::cerr << "Ошибка. Неверно введенный размер массива. Завершение программы.";
 				exit(0);
 			}
@@ -48,6 +47,11 @@ int main()
 			for (int i = 0; i < lengthOfArray; i++)
 			{
 				std::cin >> massiveInFile[i];
+				if (std::cin.fail())
+				{
+					std::cerr << "Ошибка. Неверно введеный элемент массива. Завершение программы.";
+					exit(0);
+				}
 				std::cout << massiveInFile[i] << " ";
 			}
 			std::cout << hasEqualNumbers(massiveInFile, lengthOfArray);
