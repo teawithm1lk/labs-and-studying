@@ -51,10 +51,11 @@ int main()
 int getArrayLength()
 {
 	int arrayLength;
-	while (!(std::cin >> arrayLength))
+	while (!(std::cin >> arrayLength) or arrayLength <= 0)
 	{
 		std::cin.clear();
-		std::cin.get();
+		while(std::cin.get() != '\n');
+		std::cout << "Ошибка.Введите целое положительное число: ";
 	}
 	return arrayLength;
 }
