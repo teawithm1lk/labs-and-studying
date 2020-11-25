@@ -14,6 +14,7 @@ void callPartString();
 
 int main() 
 {
+	setlocale(LC_ALL, "ru");
 	callPartC();
 	std::cout << '\n';
 	callPartString();
@@ -45,13 +46,12 @@ bool functionString(const std::string &input, int length)
 
 void callPartC()
 {
-	setlocale(LC_ALL, "ru");
 	freopen("inputC.txt", "r", stdin);
 	int sizeOfLine;
 	std::cin >> sizeOfLine;
 	if (std::cin.fail() or sizeOfLine <= 0)
 	{
-		std::cerr << "Îøèáêà ââîäà ðàçìåðà ìàññèâà.";
+		std::cerr << "Ошибка ввода размера массива.";
 		exit(0);
 	}
 	sizeOfLine++;
@@ -66,11 +66,11 @@ void callPartC()
 	fclose(stdin);
 	if (functionC(inputArray, sizeOfLine))
 	{
-		std::cout << "Â äàííîé ñòðîêå åñòü òàêàÿ ïàðà ñèìâîëîâ.";
+		std::cout << "В данной строке есть такая пара символов.";
 	}
 	else
 	{
-		std::cout << "Â äàííîé ñòðîêå íåò òàêîé ïàðû ñèìâîëîâ.";
+		std::cout << "В данной строке нет такой пары символов.";
 	}
 	delete[]inputArray;
 
@@ -90,10 +90,10 @@ void callPartString()
 	unsigned int lengthOfLine = inputString.length();
 	if (functionString(inputString, lengthOfLine))
 	{
-		std::cout << "Â äàííîé ñòðîêå åñòü òàêàÿ ïàðà ñèìâîëîâ.";
+		std::cout << "В данной строке есть такая пара символов.";
 	}
 	else
 	{
-		std::cout << "Â äàííîé ñòðîêå íåò òàêîé ïàðû ñèìâîëîâ.";
+		std::cout << "В данной строке нет такой пары символов.";
 	}
 }
