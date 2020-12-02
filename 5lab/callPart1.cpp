@@ -15,7 +15,6 @@ int getLinesOfDifferent(int array[][ROW], int line, int row)
 			{
 				if (array[i][j] == array[i][k])
 				{
-					linesOfDifferentElements = 0;
 					isExit = 0;
 					break;
 				}
