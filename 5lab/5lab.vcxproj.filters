@@ -18,6 +18,12 @@
     <ClCompile Include="5lab.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="callPart1.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="callPart2.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="input.txt">
@@ -29,5 +35,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="README.mb" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="callPart1.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="callPart2.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
