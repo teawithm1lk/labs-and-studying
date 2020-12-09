@@ -20,7 +20,6 @@ bool isMantissa(char** line)
 {
 	if (isInteger(line))
 	{
-		while (isInteger(line));
 		if (isDot(line))
 		{
 			if (isInteger(line))
@@ -52,6 +51,7 @@ bool isInteger(char** line)
 {
 	if (isCifer(line))
 	{
+		while (isInteger(line));
 		return true;
 	}
 	return false;
